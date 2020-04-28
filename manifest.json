@@ -1,0 +1,19 @@
+{
+  "name": "Accept invitations meet auto",
+  "description": "Accept all invitations from google meet",
+  "version": "1.0",
+  "content_scripts": [
+    {
+      "matches": ["*://*.meet.google.com/*"],
+      "js": ["accept.js"]
+    }
+  ],
+  "permissions": [
+    "activeTab"
+  ],
+  "browser_action": {
+      "default_title": "Aceptar todos los invitados google meet",
+      "default_icon": "icon.png"
+  },
+  "manifest_version": 2
+}
