@@ -1,19 +1,23 @@
 const translations = {
     ca: {
         activate: 'Admetre a tothom',
+        admitClass: 'pw1uU',
     },
     de: {
         activate: 'Gib alle zu',
+        admitClass: 'pw1uU',
     },
     en: {
         activate: 'Admit everyone',
+        admitClass: 'pw1uU',
     },
     es: {
         activate: 'Admitir a todo el mundo',
-        admitMsg: 'Alguien quiere unirse a esta reunión',
+        admitClass: 'pw1uU',
     },
     fr: {
         activate: 'Admettez tout le monde',
+        admitClass: 'pw1uU',
     },
 }
 const T = key =>
@@ -121,7 +125,7 @@ s.innerText = `
       }
     `
 document.body.append(s)
-var interval = setInterval(go, 1000);
+var interval = setInterval(go, 2000);
 var acceptAllInverval = null;
 
 function go() {
@@ -155,7 +159,7 @@ function acceptAll(all) {
     var el = document.querySelectorAll('.g3VIld');
     if (el.length > 0) {
         for (var i = 0; i < el.length; i++) {
-            if (el[i].getAttribute('aria-label') == T('admitMsg')) {
+            if (el[i].children[0].getAttribute("class") == T('admitClass')) {
                 var denegar = el[i].children[3].children[0]
                 var aceptar = el[i].children[3].children[1]
                 var mensaje = el[i].children[2].innerText;
